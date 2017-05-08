@@ -7,10 +7,12 @@ import weka.core.neighboursearch.LinearNNSearch;
 
 import java.util.Comparator;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**
+ * The classifier used to determine a type of the instance.
  * Created by Michał Kuźma on 08.05.17.
  */
 public class TypeClassifier {
@@ -20,13 +22,11 @@ public class TypeClassifier {
     private static final int K_NEIGHBOURS = 5;
     private static final int[] MINORITY_NEIGHBOURS_SAFE = {5, 4};
     private static final int[] MINORITY_NEIGHBOURS_BORDERLINE = {3, 2};
-    private static final int[] MINORITY_NEIGHBOURS_UNSAFE = {1, 0};
 
     private final Instances data;
     private LinearNNSearch knn;
 
     private String minorityClassName;
-    private String majorityClassName;
 
     public TypeClassifier(Instances data) {
         this.data = data;
@@ -37,11 +37,12 @@ public class TypeClassifier {
 
     public InstanceType getInstanceType(Instance instance) {
 
-        Instances nearestNeighbours = null;
+        Instances nearestNeighbours;
         try {
             nearestNeighbours = knn.kNearestNeighbours(instance, K_NEIGHBOURS);
         } catch (Exception e) {
             logger.error("Error while finding the nearest neighbours", e);
+            return null;
         }
 
         Map<String, Long> countMap = nearestNeighbours.stream()
@@ -49,7 +50,6 @@ public class TypeClassifier {
                 .collect(Collectors.groupingBy(s -> s, Collectors.counting()));
 
         long minorityCount = countMap.get(minorityClassName) != null ? countMap.get(minorityClassName) : 0;
-//        long majorityCount = countMap.get(majorityClassName) != null ? countMap.get(majorityClassName) : 0;
 
         if (IntStream.of(MINORITY_NEIGHBOURS_BORDERLINE).anyMatch(x -> x == minorityCount))
             return InstanceType.Borderline;
@@ -76,10 +76,15 @@ public class TypeClassifier {
 
         Comparator<Map.Entry<String, Long>> countMapComparator =
                 (entry1, entry2) -> entry1.getValue() > entry2.getValue() ? 1 : -1;
-        this.minorityClassName =
-                countMap.entrySet().stream().min(countMapComparator).get().getKey();
-        this.majorityClassName =
-                countMap.entrySet().stream().max(countMapComparator).get().getKey();
+
+        Optional<Map.Entry<String, Long>> optionalMinimumEntry = countMap.entrySet().stream().min(countMapComparator);
+
+        if (!optionalMinimumEntry.isPresent()) {
+            logger.error("Could not find the minority class");
+            return;
+        }
+
+        this.minorityClassName =optionalMinimumEntry.get().getKey();
     }
 
     private String getClassName(Instance instance) {
