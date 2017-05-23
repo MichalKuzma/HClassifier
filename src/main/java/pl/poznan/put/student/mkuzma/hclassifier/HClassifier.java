@@ -1,7 +1,9 @@
 package pl.poznan.put.student.mkuzma.hclassifier;
 
 import org.apache.log4j.Logger;
+import pl.poznan.put.student.mkuzma.hclassifier.classifiers.Tier1Classifier;
 import pl.poznan.put.student.mkuzma.hclassifier.type.TypeClassifier;
+import weka.classifiers.evaluation.Prediction;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ArffLoader;
@@ -10,6 +12,10 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Main class of the hierarchical classifier. It's purpose is to execute consecutive layers in order to find a proper class.
@@ -40,12 +46,39 @@ public class HClassifier {
         }
 
         Instances data = arffReader.getData();
+        Map<Integer, String> results = new HashMap<>();
+
+        Tier1Classifier tier1Classifier = new Tier1Classifier(data);
+
+        List<String> predictions = new ArrayList<>();
+        try {
+            predictions = tier1Classifier.classify(data);
+            for (int i = 0; i < data.size(); i++)
+                System.out.println(data.get(i) + "\t\t" + predictions.get(i));
+        } catch (Exception e) {
+            logger.error("Error while classifing data", e);
+        }
 
         TypeClassifier typeClassifier = new TypeClassifier(data);
+        Instances tier2Instances = new Instances(data);
+        for (int i = data.size() - 1; i >= 0; i--) {
+            if ("SafeMinority".equals(predictions.get(i))) {
+                results.put(i, typeClassifier.getMinorityClassName());
+                break;
+            }
+            if ("SafeMajority".equals(predictions.get(i))) {
+                results.put(i, typeClassifier.getMajorityClassName());
+                break;
+            }
 
-        for (Instance instance : data) {
-            System.out.println(typeClassifier.getInstanceType(instance));
+            tier2Instances.delete(i);
         }
+
+//        TypeClassifier typeClassifier = new TypeClassifier(data);
+//
+//        for (Instance instance : data) {
+//            System.out.println(typeClassifier.getInstanceType(instance));
+//        }
 
     }
 }

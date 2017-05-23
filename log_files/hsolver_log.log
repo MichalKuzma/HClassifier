@@ -1,0 +1,67 @@
+2017-05-22 21:10:10 ERROR Tier1Classifier:26 - Error while preprocessing data
+java.lang.IllegalArgumentException: Value not defined for given nominal attribute!
+	at weka.core.AbstractInstance.setValue(AbstractInstance.java:507)
+	at pl.poznan.put.student.mkuzma.hclassifier.classifiers.Tier1Classifier.preprocessData(Tier1Classifier.java:41)
+	at pl.poznan.put.student.mkuzma.hclassifier.classifiers.Tier1Classifier.<init>(Tier1Classifier.java:24)
+	at pl.poznan.put.student.mkuzma.hclassifier.HClassifier.main(HClassifier.java:45)
+2017-05-22 21:11:01 ERROR Tier1Classifier:26 - Error while preprocessing data
+java.lang.IllegalArgumentException: Value not defined for given nominal attribute!
+	at weka.core.AbstractInstance.setValue(AbstractInstance.java:507)
+	at pl.poznan.put.student.mkuzma.hclassifier.classifiers.Tier1Classifier.preprocessData(Tier1Classifier.java:41)
+	at pl.poznan.put.student.mkuzma.hclassifier.classifiers.Tier1Classifier.<init>(Tier1Classifier.java:24)
+	at pl.poznan.put.student.mkuzma.hclassifier.HClassifier.main(HClassifier.java:45)
+2017-05-22 21:12:54 ERROR Tier1Classifier:26 - Error while preprocessing data
+java.lang.IllegalArgumentException: Value not defined for given nominal attribute!
+	at weka.core.AbstractInstance.setValue(AbstractInstance.java:507)
+	at pl.poznan.put.student.mkuzma.hclassifier.classifiers.Tier1Classifier.preprocessData(Tier1Classifier.java:54)
+	at pl.poznan.put.student.mkuzma.hclassifier.classifiers.Tier1Classifier.<init>(Tier1Classifier.java:24)
+	at pl.poznan.put.student.mkuzma.hclassifier.HClassifier.main(HClassifier.java:45)
+2017-05-22 21:16:44 ERROR Tier1Classifier:26 - Error while preprocessing data
+java.lang.IllegalArgumentException: Value not defined for given nominal attribute!
+	at weka.core.AbstractInstance.setValue(AbstractInstance.java:507)
+	at pl.poznan.put.student.mkuzma.hclassifier.classifiers.Tier1Classifier.preprocessData(Tier1Classifier.java:54)
+	at pl.poznan.put.student.mkuzma.hclassifier.classifiers.Tier1Classifier.<init>(Tier1Classifier.java:24)
+	at pl.poznan.put.student.mkuzma.hclassifier.HClassifier.main(HClassifier.java:45)
+2017-05-22 21:31:23 ERROR Tier1Classifier:32 - Error while preprocessing data
+java.lang.NullPointerException
+	at pl.poznan.put.student.mkuzma.hclassifier.type.TypeClassifier.getClassName(TypeClassifier.java:91)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Iterator.forEachRemaining(Iterator.java:116)
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at pl.poznan.put.student.mkuzma.hclassifier.type.TypeClassifier.getClassNames(TypeClassifier.java:75)
+	at pl.poznan.put.student.mkuzma.hclassifier.type.TypeClassifier.<init>(TypeClassifier.java:35)
+	at pl.poznan.put.student.mkuzma.hclassifier.classifiers.Tier1Classifier.preprocessData(Tier1Classifier.java:45)
+	at pl.poznan.put.student.mkuzma.hclassifier.classifiers.Tier1Classifier.<init>(Tier1Classifier.java:30)
+	at pl.poznan.put.student.mkuzma.hclassifier.HClassifier.main(HClassifier.java:45)
+2017-05-22 21:44:32 INFO  Tier1Classifier:80 - Training model finished
+2017-05-22 21:44:49 INFO  Tier1Classifier:80 - Training model finished
+2017-05-22 21:48:29 INFO  Tier1Classifier:80 - Training model finished
+2017-05-22 21:49:53 INFO  Tier1Classifier:80 - Training model finished
+2017-05-23 22:29:32 INFO  TreeClassifier:34 - Training model finished.
+2017-05-23 22:29:32 ERROR HClassifier:56 - Error while classifing data
+weka.core.UnassignedClassException: Class is not set!
+	at weka.core.AbstractInstance.setClassMissing(AbstractInstance.java:388)
+	at weka.classifiers.evaluation.Evaluation.evaluationForSingleInstance(Evaluation.java:1957)
+	at weka.classifiers.evaluation.Evaluation.evaluateModelOnceAndRecordPrediction(Evaluation.java:2001)
+	at weka.classifiers.evaluation.Evaluation.evaluateModel(Evaluation.java:1876)
+	at weka.classifiers.Evaluation.evaluateModel(Evaluation.java:671)
+	at pl.poznan.put.student.mkuzma.hclassifier.classifiers.TreeClassifier.classify(TreeClassifier.java:42)
+	at pl.poznan.put.student.mkuzma.hclassifier.classifiers.Tier1Classifier.classify(Tier1Classifier.java:78)
+	at pl.poznan.put.student.mkuzma.hclassifier.HClassifier.main(HClassifier.java:51)
+2017-05-23 22:32:31 INFO  TreeClassifier:34 - Training model finished.
+2017-05-23 22:33:37 ERROR HClassifier:56 - Error while classifing data
+weka.core.UnassignedClassException: Class is not set!
+	at weka.core.AbstractInstance.setClassMissing(AbstractInstance.java:388)
+	at weka.classifiers.evaluation.Evaluation.evaluationForSingleInstance(Evaluation.java:1957)
+	at weka.classifiers.evaluation.Evaluation.evaluateModelOnceAndRecordPrediction(Evaluation.java:2001)
+	at weka.classifiers.evaluation.Evaluation.evaluateModel(Evaluation.java:1876)
+	at weka.classifiers.Evaluation.evaluateModel(Evaluation.java:671)
+	at pl.poznan.put.student.mkuzma.hclassifier.classifiers.TreeClassifier.classify(TreeClassifier.java:42)
+	at pl.poznan.put.student.mkuzma.hclassifier.classifiers.Tier1Classifier.classify(Tier1Classifier.java:80)
+	at pl.poznan.put.student.mkuzma.hclassifier.HClassifier.main(HClassifier.java:51)
+2017-05-23 22:36:14 INFO  TreeClassifier:34 - Training model finished.

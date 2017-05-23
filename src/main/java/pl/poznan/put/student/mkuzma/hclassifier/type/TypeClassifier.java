@@ -27,6 +27,7 @@ public class TypeClassifier {
     private LinearNNSearch knn;
 
     private String minorityClassName;
+    private String majorityClassName;
 
     public TypeClassifier(Instances data) {
         this.data = data;
@@ -84,10 +85,27 @@ public class TypeClassifier {
             return;
         }
 
-        this.minorityClassName =optionalMinimumEntry.get().getKey();
+        this.minorityClassName = optionalMinimumEntry.get().getKey();
+
+        Optional<Map.Entry<String, Long>> optionalMaximumEntry = countMap.entrySet().stream().max(countMapComparator);
+
+        if (!optionalMaximumEntry.isPresent()) {
+            logger.error("Could not find the majority class");
+            return;
+        }
+
+        this.majorityClassName = optionalMaximumEntry.get().getKey();
     }
 
     private String getClassName(Instance instance) {
-        return this.data.attribute("class").value((int) instance.value(this.data.attribute("class").index()));
+        return this.data.attribute("Class").value((int) instance.value(this.data.attribute("Class").index()));
+    }
+
+    public String getMinorityClassName() {
+        return minorityClassName;
+    }
+
+    public String getMajorityClassName() {
+        return majorityClassName;
     }
 }
