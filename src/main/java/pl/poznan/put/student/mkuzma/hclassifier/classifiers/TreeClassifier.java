@@ -3,10 +3,13 @@ package pl.poznan.put.student.mkuzma.hclassifier.classifiers;
 import org.apache.log4j.Logger;
 import weka.classifiers.Evaluation;
 import weka.classifiers.trees.J48;
+import weka.core.Attribute;
+import weka.core.Instance;
 import weka.core.Instances;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by Michał Kuźma on 23.05.17.
@@ -34,13 +37,31 @@ public class TreeClassifier {
     public List<String> classify(Instances testingSet) throws Exception {
         List<String> result = new ArrayList<>();
 
-        testingSet.setClass(testingSet.attribute(classColumnName));
+        Instances transformedTestingSet = new Instances(testingSet);
+        if (transformedTestingSet.attribute(classColumnName) == null) {
+            Attribute trainSetClassAttribute = trainInstances.attribute(classColumnName);
+
+            List<String> values = new ArrayList<>(trainSetClassAttribute.numValues());
+            for (int i = 0; i < trainSetClassAttribute.numValues(); i++)
+                values.add(trainSetClassAttribute.value(i));
+            transformedTestingSet.insertAttributeAt(
+                    new Attribute(classColumnName, values),
+                    transformedTestingSet.numAttributes());
+
+            Random random = new Random();
+            for (Instance instance : transformedTestingSet) {
+                instance.setValue(transformedTestingSet.attribute(classColumnName).index(),
+                        values.get(random.nextInt(values.size())));
+            }
+        }
+
+        transformedTestingSet.setClass(transformedTestingSet.attribute(classColumnName));
 
         Evaluation evaluation = new Evaluation(trainInstances);
 
-        evaluation.evaluateModel(_classifier, testingSet);
+        evaluation.evaluateModel(_classifier, transformedTestingSet);
 
-        for (int i = 0; i < testingSet.size(); i++) {
+        for (int i = 0; i < transformedTestingSet.size(); i++) {
             result.add(trainInstances.attribute(classColumnName).value((int) evaluation.predictions().get(i).predicted()));
         }
 
