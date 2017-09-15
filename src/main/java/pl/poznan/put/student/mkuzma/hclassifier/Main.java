@@ -1,19 +1,14 @@
 package pl.poznan.put.student.mkuzma.hclassifier;
 
 import org.apache.log4j.Logger;
-import pl.poznan.put.student.mkuzma.hclassifier.classifiers.TreeClassifier;
-import pl.poznan.put.student.mkuzma.hclassifier.type.TypeClassifier;
+import weka.classifiers.Classifier;
+import weka.classifiers.Evaluation;
 import weka.classifiers.trees.J48;
 import weka.core.Instances;
 import weka.core.converters.ArffLoader;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.io.*;
+import java.util.Random;
 
 /**
  * Created by Michał Kuźma on 28.05.2017.
@@ -29,6 +24,20 @@ public class Main {
 
         String filePath = args[0];
 
+        File folder = new File("data");
+        if (!folder.isDirectory()) {
+            logger.error("Cannot read data files.");
+            return;
+        }
+        for (final File fileEntry : folder.listFiles()) {
+            testForDataset(fileEntry.getPath());
+        }
+
+    }
+
+    private static void testForDataset(String filePath) {
+        logger.info("Testing for dataset " + filePath + ":");
+
         ArffLoader.ArffReader arffReader;
         try {
             BufferedReader reader = new BufferedReader(new FileReader(filePath));
@@ -43,70 +52,40 @@ public class Main {
 
         Instances data = arffReader.getData();
 
-        HClassifier hierarchicalClassifier = new HClassifier();
+        String classAttributeName = data.attribute(data.numAttributes() - 1).name();
+
+        data.setClass(data.attribute(classAttributeName));
+
+        evaluateClassifier(new HClassifier(classAttributeName), data);
+        evaluateClassifier(new J48(), data);
+    }
+
+    private static void evaluateClassifier(Classifier classifier, Instances data) {
         try {
-            hierarchicalClassifier.buildClassifier(data);
-        } catch (Exception e) {
-            logger.error("Error while building the classifier", e);
-        }
+            Evaluation evaluation = new Evaluation(data);
+            evaluation.crossValidateModel(classifier, data, 10, new Random(1));
 
-        Instances testingSet = new Instances(data);
-        testingSet.deleteAttributeAt(testingSet.attribute("Class").index());
+            double[][] confusionMatrix = evaluation.confusionMatrix();
 
-        TypeClassifier typeClassifier = new TypeClassifier(data);
-        List<String> predictions = hierarchicalClassifier.classify(testingSet);
-        predictions = predictions.stream().map(p -> ("SafeMajority".equals(p) ? typeClassifier.getMajorityClassName() :
-                ("SafeMinority".equals(p) ? typeClassifier.getMinorityClassName() : p))).collect(Collectors.toList());
+            StringBuilder breakline = new StringBuilder();
+            for (int i = 0; i < confusionMatrix[0].length; i++)
+                breakline.append("--------");
 
-        double precision = 0.0;
-        double minorityPrecision = 0.0;
-        int minorityCount = 0;
-        for (int i = 0; i < testingSet.size(); i++) {
-            logger.debug(data.get(i) + "\t\t" + predictions.get(i));
-            if (typeClassifier.getMinorityClassName().equals(data.attribute("Class").value((int) data.get(i).value(data.attribute("Class")))))
-                minorityCount += 1;
-            if (data.attribute("Class").value((int) data.get(i).value(data.attribute("Class"))).equals(predictions.get(i))) {
-                if (typeClassifier.getMinorityClassName().equals(predictions.get(i)))
-                    minorityPrecision += 1.0;
-                precision += 1.0;
+            logger.info(classifier.getClass().getSimpleName());
+            logger.info(breakline);
+
+            for (double[] confusionMartixRow : confusionMatrix) {
+                StringBuilder row = new StringBuilder();
+                row.append("|");
+                for (double confusionMatrixCell : confusionMartixRow) {
+                    row.append(confusionMatrixCell);
+                    row.append("\t|");
+                }
+                logger.info(row.toString());
+                logger.info(breakline);
             }
-        }
-        precision /= data.size();
-        minorityPrecision /= minorityCount;
-        logger.info("HIERARCHICAL CLASSIFIER");
-        logger.info("Precision: " + Double.toString(precision));
-        logger.info("Minority precision: " + Double.toString(minorityPrecision));
-
-        TreeClassifier treeClassifier = new TreeClassifier();
-        try {
-            treeClassifier.trainClassifier(data, "Class");
         } catch (Exception e) {
-            logger.error("Error while building the classifier", e);
+            e.printStackTrace();
         }
-
-        List<String> treeClassifierPredictions = new ArrayList<>();
-        try {
-            treeClassifierPredictions = treeClassifier.classify(testingSet);
-        } catch (Exception e) {
-            logger.error("Error while classifying the test set", e);
-        }
-
-        double treeClassifierPrecision = 0.0;
-        double treeClassifierMinorityPrecision = 0.0;
-        for (int i = 0; i < testingSet.size(); i++) {
-            if (typeClassifier.getMinorityClassName().equals(data.attribute("Class").value((int) data.get(i).value(data.attribute("Class")))))
-            if (data.attribute("Class").value((int) data.get(i).value(data.attribute("Class"))).equals(treeClassifierPredictions.get(i))) {
-                if (typeClassifier.getMinorityClassName().equals(treeClassifierPredictions.get(i)))
-                    treeClassifierMinorityPrecision += 1.0;
-                treeClassifierPrecision += 1.0;
-            }
-        }
-        treeClassifierPrecision /= data.size();
-        treeClassifierMinorityPrecision /= minorityCount;
-        logger.info("SIMPLE TREE CLASSIFIER");
-        logger.info("Precision: " + Double.toString(treeClassifierPrecision));
-        logger.info("Minority precision: " + Double.toString(treeClassifierMinorityPrecision));
-
-
     }
 }

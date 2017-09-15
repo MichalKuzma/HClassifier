@@ -30,8 +30,6 @@ public class TreeClassifier {
 
         _classifier = new J48();
         _classifier.buildClassifier(trainInstances);
-
-        logger.info("Training model finished.");
     }
 
     public List<String> classify(Instances testingSet) throws Exception {

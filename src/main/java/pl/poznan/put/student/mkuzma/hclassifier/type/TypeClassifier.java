@@ -25,13 +25,15 @@ public class TypeClassifier {
 
     private final Instances data;
     private LinearNNSearch knn;
+    private String classAttributeName;
 
     private String minorityClassName;
     private String majorityClassName;
 
-    public TypeClassifier(Instances data) {
+    public TypeClassifier(Instances data, String classAttributeName) {
         this.data = data;
         this.knn = new LinearNNSearch(data);
+        this.classAttributeName = classAttributeName;
 
         getClassNames();
     }
@@ -98,7 +100,7 @@ public class TypeClassifier {
     }
 
     private String getClassName(Instance instance) {
-        return this.data.attribute("Class").value((int) instance.value(this.data.attribute("Class").index()));
+        return this.data.attribute(classAttributeName).value((int) instance.value(this.data.attribute(classAttributeName).index()));
     }
 
     public String getMinorityClassName() {
