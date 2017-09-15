@@ -36,7 +36,7 @@ public class Main {
     }
 
     private static void testForDataset(String filePath) {
-        logger.info("Testing for dataset " + filePath + ":");
+        System.out.println("\nTesting for dataset " + filePath + ":");
 
         ArffLoader.ArffReader arffReader;
         try {
@@ -65,14 +65,16 @@ public class Main {
             Evaluation evaluation = new Evaluation(data);
             evaluation.crossValidateModel(classifier, data, 10, new Random(1));
 
+            System.out.printf("\n\n%s\n----------------------------------------\n\n", classifier.getClass().getSimpleName());
+
+            System.out.println("Confusion matrix:");
+
             double[][] confusionMatrix = evaluation.confusionMatrix();
 
             StringBuilder breakline = new StringBuilder();
             for (int i = 0; i < confusionMatrix[0].length; i++)
                 breakline.append("--------");
-
-            logger.info(classifier.getClass().getSimpleName());
-            logger.info(breakline);
+            System.out.println(breakline);
 
             for (double[] confusionMartixRow : confusionMatrix) {
                 StringBuilder row = new StringBuilder();
@@ -81,9 +83,13 @@ public class Main {
                     row.append(confusionMatrixCell);
                     row.append("\t|");
                 }
-                logger.info(row.toString());
-                logger.info(breakline);
+                System.out.println(row.toString());
+                System.out.println(breakline);
             }
+
+            System.out.printf("Weighted Precision: %f\n", evaluation.weightedPrecision());
+            System.out.printf("Precision on class #1: %f\n", evaluation.precision(0));
+            System.out.printf("Precision on class #2: %f\n", evaluation.precision(1));
         } catch (Exception e) {
             e.printStackTrace();
         }
