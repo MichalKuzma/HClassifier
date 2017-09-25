@@ -87,9 +87,9 @@ public class Main {
                 System.out.println(breakline);
             }
 
-            System.out.printf("Weighted Precision: %f\n", evaluation.weightedPrecision());
-            System.out.printf("Precision on class #1: %f\n", evaluation.precision(0));
-            System.out.printf("Precision on class #2: %f\n", evaluation.precision(1));
+            System.out.printf("Weighted Recall: %f\n", evaluation.weightedRecall());
+            System.out.printf("Recall on class #1: %f\n", evaluation.recall(0));
+            System.out.printf("Recall on class #2: %f\n", evaluation.recall(1));
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,4 +1,6 @@
 Testing for dataset data/vehicle.arff:
+wrz 25, 2017 8:29:39 PM com.github.fommil.jni.JniLoader liberalLoad
+INFO: successfully loaded /tmp/jniloader4494986993310447659netlib-native_system-linux-x86_64.so
 
 
 HClassifier
@@ -10,9 +12,9 @@ Confusion matrix:
 ----------------
 |32.0	|615.0	|
 ----------------
-Weighted Precision: 0,926980
-Precision on class #1: 0,840796
-Precision on class #2: 0,953488
+Weighted Recall: 0,926714
+Recall on class #1: 0,849246
+Recall on class #2: 0,950541
 
 
 J48
@@ -24,9 +26,9 @@ Confusion matrix:
 ----------------
 |27.0	|620.0	|
 ----------------
-Weighted Precision: 0,941358
-Precision on class #1: 0,866995
-Precision on class #2: 0,964230
+Weighted Recall: 0,940898
+Recall on class #1: 0,884422
+Recall on class #2: 0,958269
 
 Testing for dataset data/scrotal_pain.arff:
 
@@ -40,9 +42,9 @@ Confusion matrix:
 ----------------
 |22.0	|120.0	|
 ----------------
-Weighted Precision: 0,700090
-Precision on class #1: 0,521739
-Precision on class #2: 0,774194
+Weighted Recall: 0,716418
+Recall on class #1: 0,406780
+Recall on class #2: 0,845070
 
 
 J48
@@ -54,9 +56,9 @@ Confusion matrix:
 ----------------
 |19.0	|123.0	|
 ----------------
-Weighted Precision: 0,732907
-Precision on class #1: 0,586957
-Precision on class #2: 0,793548
+Weighted Recall: 0,746269
+Recall on class #1: 0,457627
+Recall on class #2: 0,866197
 
 Testing for dataset data/segment0.arff:
 
@@ -70,9 +72,9 @@ Confusion matrix:
 ----------------
 |10.0	|1969.0	|
 ----------------
-Weighted Precision: 0,990447
-Precision on class #1: 0,969419
-Precision on class #2: 0,993942
+Weighted Recall: 0,990468
+Recall on class #1: 0,963526
+Recall on class #2: 0,994947
 
 
 J48
@@ -84,9 +86,9 @@ Confusion matrix:
 ----------------
 |6.0	|1973.0	|
 ----------------
-Weighted Precision: 0,991294
-Precision on class #1: 0,981308
-Precision on class #2: 0,992954
+Weighted Recall: 0,991334
+Recall on class #1: 0,957447
+Recall on class #2: 0,996968
 
 Testing for dataset data/vowel0.arff:
 
@@ -100,9 +102,9 @@ Confusion matrix:
 ----------------
 |3.0	|895.0	|
 ----------------
-Weighted Precision: 0,993927
-Precision on class #1: 0,966667
-Precision on class #2: 0,996659
+Weighted Recall: 0,993927
+Recall on class #1: 0,966667
+Recall on class #2: 0,996659
 
 
 J48
@@ -114,9 +116,9 @@ Confusion matrix:
 ----------------
 |5.0	|893.0	|
 ----------------
-Weighted Precision: 0,989879
-Precision on class #1: 0,944444
-Precision on class #2: 0,994432
+Weighted Recall: 0,989879
+Recall on class #1: 0,944444
+Recall on class #2: 0,994432
 
 Testing for dataset data/car.arff:
 
@@ -130,9 +132,9 @@ Confusion matrix:
 ----------------
 |4.0	|1655.0	|
 ----------------
-Weighted Precision: 0,968882
-Precision on class #1: 0,857143
-Precision on class #2: 0,973529
+Weighted Recall: 0,971644
+Recall on class #1: 0,347826
+Recall on class #2: 0,997589
 
 
 J48
@@ -144,9 +146,9 @@ Confusion matrix:
 ----------------
 |0.0	|1659.0	|
 ----------------
-Weighted Precision: 0,921733
-Precision on class #1: 0,000000
-Precision on class #2: 0,960069
+Weighted Recall: 0,960069
+Recall on class #1: 0,000000
+Recall on class #2: 1,000000
 
 Testing for dataset data/seismic-bumps.arff:
 
@@ -160,9 +162,9 @@ Confusion matrix:
 ----------------
 |38.0	|2376.0	|
 ----------------
-Weighted Precision: 0,890384
-Precision on class #1: 0,224490
-Precision on class #2: 0,937278
+Weighted Recall: 0,923762
+Recall on class #1: 0,064706
+Recall on class #2: 0,984258
 
 
 J48
@@ -174,9 +176,9 @@ Confusion matrix:
 ----------------
 |2.0	|2412.0	|
 ----------------
-Weighted Precision: 0,872702
-Precision on class #1: 0,000000
-Precision on class #2: 0,934160
+Weighted Recall: 0,933437
+Recall on class #1: 0,000000
+Recall on class #2: 0,999171
 
 Testing for dataset data/breast-w.arff:
 
@@ -190,9 +192,9 @@ Confusion matrix:
 ----------------
 |18.0	|440.0	|
 ----------------
-Weighted Precision: 0,945546
-Precision on class #1: 0,924686
-Precision on class #2: 0,956522
+Weighted Recall: 0,945637
+Recall on class #1: 0,917012
+Recall on class #2: 0,960699
 
 
 J48
@@ -204,9 +206,9 @@ Confusion matrix:
 ----------------
 |20.0	|438.0	|
 ----------------
-Weighted Precision: 0,945759
-Precision on class #1: 0,917695
-Precision on class #2: 0,960526
+Weighted Recall: 0,945637
+Recall on class #1: 0,925311
+Recall on class #2: 0,956332
 
 Testing for dataset data/balance-scale.arff:
 
@@ -220,9 +222,9 @@ Confusion matrix:
 ----------------
 |7.0	|569.0	|
 ----------------
-Weighted Precision: 0,848528
-Precision on class #1: 0,000000
-Precision on class #2: 0,920712
+Weighted Recall: 0,910400
+Recall on class #1: 0,000000
+Recall on class #2: 0,987847
 
 
 J48
@@ -234,9 +236,9 @@ Confusion matrix:
 ----------------
 |0.0	|576.0	|
 ----------------
-Weighted Precision: 0,849347
-Precision on class #1: 0,000000
-Precision on class #2: 0,921600
+Weighted Recall: 0,921600
+Recall on class #1: 0,000000
+Recall on class #2: 1,000000
 
 Testing for dataset data/new-thyroid.arff:
 
@@ -250,9 +252,9 @@ Confusion matrix:
 ----------------
 |3.0	|177.0	|
 ----------------
-Weighted Precision: 0,962201
-Precision on class #1: 0,909091
-Precision on class #2: 0,972527
+Weighted Recall: 0,962791
+Recall on class #1: 0,857143
+Recall on class #2: 0,983333
 
 
 J48
@@ -264,9 +266,9 @@ Confusion matrix:
 ----------------
 |5.0	|175.0	|
 ----------------
-Weighted Precision: 0,958682
-Precision on class #1: 0,861111
-Precision on class #2: 0,977654
+Weighted Recall: 0,958140
+Recall on class #1: 0,885714
+Recall on class #2: 0,972222
 
 Testing for dataset data/iris.arff:
 
@@ -280,9 +282,9 @@ Confusion matrix:
 ----------------
 |0.0	|25.0	|
 ----------------
-Weighted Precision: 0,975309
-Precision on class #1: 1,000000
-Precision on class #2: 0,925926
+Weighted Recall: 0,973333
+Recall on class #1: 0,960000
+Recall on class #2: 1,000000
 
 
 J48
@@ -294,9 +296,9 @@ Confusion matrix:
 ----------------
 |0.0	|25.0	|
 ----------------
-Weighted Precision: 0,975309
-Precision on class #1: 1,000000
-Precision on class #2: 0,925926
+Weighted Recall: 0,973333
+Recall on class #1: 0,960000
+Recall on class #2: 1,000000
 
 Testing for dataset data/haberman.arff:
 
@@ -310,9 +312,9 @@ Confusion matrix:
 ----------------
 |20.0	|205.0	|
 ----------------
-Weighted Precision: 0,704393
-Precision on class #1: 0,512195
-Precision on class #2: 0,773585
+Weighted Recall: 0,738562
+Recall on class #1: 0,259259
+Recall on class #2: 0,911111
 
 
 J48
@@ -324,9 +326,9 @@ Confusion matrix:
 ----------------
 |29.0	|196.0	|
 ----------------
-Weighted Precision: 0,689502
-Precision on class #1: 0,452830
-Precision on class #2: 0,774704
+Weighted Recall: 0,718954
+Recall on class #1: 0,296296
+Recall on class #2: 0,871111
 
 Testing for dataset data/hepatitis.arff:
 
@@ -340,9 +342,9 @@ Confusion matrix:
 ----------------
 |11.0	|112.0	|
 ----------------
-Weighted Precision: 0,790282
-Precision on class #1: 0,541667
-Precision on class #2: 0,854962
+Weighted Recall: 0,806452
+Recall on class #1: 0,406250
+Recall on class #2: 0,910569
 
 
 J48
@@ -354,9 +356,9 @@ Confusion matrix:
 ----------------
 |7.0	|116.0	|
 ----------------
-Weighted Precision: 0,824587
-Precision on class #1: 0,666667
-Precision on class #2: 0,865672
+Weighted Recall: 0,838710
+Recall on class #1: 0,437500
+Recall on class #2: 0,943089
 
 Testing for dataset data/solar-flareF.arff:
 
@@ -370,9 +372,9 @@ Confusion matrix:
 ----------------
 |3.0	|1020.0	|
 ----------------
-Weighted Precision: 0,938713
-Precision on class #1: 0,400000
-Precision on class #2: 0,961357
+Weighted Recall: 0,958724
+Recall on class #1: 0,046512
+Recall on class #2: 0,997067
 
 
 J48
@@ -384,9 +386,9 @@ Confusion matrix:
 ----------------
 |0.0	|1023.0	|
 ----------------
-Weighted Precision: 0,920952
-Precision on class #1: 0,000000
-Precision on class #2: 0,959662
+Weighted Recall: 0,959662
+Recall on class #1: 0,000000
+Recall on class #2: 1,000000
 
 Testing for dataset data/acl.arff:
 
@@ -400,9 +402,9 @@ Confusion matrix:
 ----------------
 |4.0	|96.0	|
 ----------------
-Weighted Precision: 0,920568
-Precision on class #1: 0,891892
-Precision on class #2: 0,932039
+Weighted Recall: 0,921429
+Recall on class #1: 0,825000
+Recall on class #2: 0,960000
 
 
 J48
@@ -414,9 +416,9 @@ Confusion matrix:
 ----------------
 |5.0	|95.0	|
 ----------------
-Weighted Precision: 0,905911
-Precision on class #1: 0,864865
-Precision on class #2: 0,922330
+Weighted Recall: 0,907143
+Recall on class #1: 0,800000
+Recall on class #2: 0,950000
 
 Testing for dataset data/flags.arff:
 
@@ -430,9 +432,9 @@ Confusion matrix:
 ----------------
 |4.0	|173.0	|
 ----------------
-Weighted Precision: 0,868785
-Precision on class #1: 0,333333
-Precision on class #2: 0,920213
+Weighted Recall: 0,902062
+Recall on class #1: 0,117647
+Recall on class #2: 0,977401
 
 
 J48
@@ -444,9 +446,9 @@ Confusion matrix:
 ----------------
 |0.0	|177.0	|
 ----------------
-Weighted Precision: 0,832421
-Precision on class #1: 0,000000
-Precision on class #2: 0,912371
+Weighted Recall: 0,912371
+Recall on class #1: 0,000000
+Recall on class #2: 1,000000
 
 Testing for dataset data/cmc.arff:
 
@@ -460,9 +462,9 @@ Confusion matrix:
 ----------------
 |105.0	|1035.0	|
 ----------------
-Weighted Precision: 0,726610
-Precision on class #1: 0,450262
-Precision on class #2: 0,807332
+Weighted Recall: 0,761032
+Recall on class #1: 0,258258
+Recall on class #2: 0,907895
 
 
 J48
@@ -474,9 +476,9 @@ Confusion matrix:
 ----------------
 |87.0	|1053.0	|
 ----------------
-Weighted Precision: 0,758781
-Precision on class #1: 0,544503
-Precision on class #2: 0,821373
+Weighted Recall: 0,785472
+Recall on class #1: 0,312312
+Recall on class #2: 0,923684
 
 Testing for dataset data/transfusion.arff:
 
@@ -490,9 +492,9 @@ Confusion matrix:
 ----------------
 |62.0	|508.0	|
 ----------------
-Weighted Precision: 0,729425
-Precision on class #1: 0,478992
-Precision on class #2: 0,807631
+Weighted Recall: 0,755348
+Recall on class #1: 0,320225
+Recall on class #2: 0,891228
 
 
 J48
@@ -504,9 +506,9 @@ Confusion matrix:
 ----------------
 |65.0	|505.0	|
 ----------------
-Weighted Precision: 0,764066
-Precision on class #1: 0,542254
-Precision on class #2: 0,833333
+Weighted Recall: 0,778075
+Recall on class #1: 0,432584
+Recall on class #2: 0,885965
 
 Testing for dataset data/yeast-ME2.arff:
 
@@ -520,9 +522,9 @@ Confusion matrix:
 ----------------
 |9.0	|1424.0	|
 ----------------
-Weighted Precision: 0,945355
-Precision on class #1: 0,307692
-Precision on class #2: 0,968049
+Weighted Recall: 0,962264
+Recall on class #1: 0,078431
+Recall on class #2: 0,993719
 
 
 J48
@@ -534,9 +536,9 @@ Confusion matrix:
 ----------------
 |18.0	|1415.0	|
 ----------------
-Weighted Precision: 0,958498
-Precision on class #1: 0,470588
-Precision on class #2: 0,975862
+Weighted Recall: 0,964286
+Recall on class #1: 0,313725
+Recall on class #2: 0,987439
 
 Testing for dataset data/bupa.arff:
 
@@ -550,9 +552,9 @@ Confusion matrix:
 ----------------
 |42.0	|158.0	|
 ----------------
-Weighted Precision: 0,590451
-Precision on class #1: 0,543478
-Precision on class #2: 0,624506
+Weighted Recall: 0,602899
+Recall on class #1: 0,344828
+Recall on class #2: 0,790000
 
 
 J48
@@ -564,9 +566,9 @@ Confusion matrix:
 ----------------
 |40.0	|160.0	|
 ----------------
-Weighted Precision: 0,683415
-Precision on class #1: 0,658120
-Precision on class #2: 0,701754
+Weighted Recall: 0,686957
+Recall on class #1: 0,531034
+Recall on class #2: 0,800000
 
 Testing for dataset data/cleveland.arff:
 
@@ -580,9 +582,9 @@ Confusion matrix:
 ----------------
 |16.0	|252.0	|
 ----------------
-Weighted Precision: 0,810703
-Precision on class #1: 0,200000
-Precision on class #2: 0,890459
+Weighted Recall: 0,844884
+Recall on class #1: 0,114286
+Recall on class #2: 0,940299
 
 
 J48
@@ -594,9 +596,9 @@ Confusion matrix:
 ----------------
 |6.0	|262.0	|
 ----------------
-Weighted Precision: 0,814424
-Precision on class #1: 0,250000
-Precision on class #2: 0,888136
+Weighted Recall: 0,871287
+Recall on class #1: 0,057143
+Recall on class #2: 0,977612
 
 Testing for dataset data/abdominal_pain.arff:
 
@@ -610,9 +612,9 @@ Confusion matrix:
 ----------------
 |54.0	|467.0	|
 ----------------
-Weighted Precision: 0,818536
-Precision on class #1: 0,703297
-Precision on class #2: 0,863216
+Weighted Recall: 0,822960
+Recall on class #1: 0,633663
+Recall on class #2: 0,896353
 
 
 J48
@@ -624,9 +626,9 @@ Confusion matrix:
 ----------------
 |55.0	|466.0	|
 ----------------
-Weighted Precision: 0,831756
-Precision on class #1: 0,713542
-Precision on class #2: 0,877589
+Weighted Recall: 0,834025
+Recall on class #1: 0,678218
+Recall on class #2: 0,894434
 
 Testing for dataset data/lymphography-normal-fibrosis.arff:
 
@@ -640,9 +642,9 @@ Confusion matrix:
 ----------------
 |2.0	|140.0	|
 ----------------
-Weighted Precision: 0,963655
-Precision on class #1: 0,600000
-Precision on class #2: 0,979021
+Weighted Recall: 0,966216
+Recall on class #1: 0,500000
+Recall on class #2: 0,985915
 
 
 J48
@@ -654,9 +656,9 @@ Confusion matrix:
 ----------------
 |0.0	|142.0	|
 ----------------
-Weighted Precision: 0,980149
-Precision on class #1: 1,000000
-Precision on class #2: 0,979310
+Weighted Recall: 0,979730
+Recall on class #1: 0,500000
+Recall on class #2: 1,000000
 
 Testing for dataset data/pima.arff:
 
@@ -670,9 +672,9 @@ Confusion matrix:
 ----------------
 |88.0	|412.0	|
 ----------------
-Weighted Precision: 0,720028
-Precision on class #1: 0,623932
-Precision on class #2: 0,771536
+Weighted Recall: 0,726563
+Recall on class #1: 0,544776
+Recall on class #2: 0,824000
 
 
 J48
@@ -684,9 +686,9 @@ Confusion matrix:
 ----------------
 |93.0	|407.0	|
 ----------------
-Weighted Precision: 0,735198
-Precision on class #1: 0,632411
-Precision on class #2: 0,790291
+Weighted Recall: 0,738281
+Recall on class #1: 0,597015
+Recall on class #2: 0,814000
 
 Testing for dataset data/hsv.arff:
 
@@ -700,9 +702,9 @@ Confusion matrix:
 ----------------
 |1.0	|107.0	|
 ----------------
-Weighted Precision: 0,846721
-Precision on class #1: 0,500000
-Precision on class #2: 0,891667
+Weighted Recall: 0,885246
+Recall on class #1: 0,071429
+Recall on class #2: 0,990741
 
 
 J48
@@ -714,9 +716,9 @@ Confusion matrix:
 ----------------
 |0.0	|108.0	|
 ----------------
-Weighted Precision: 0,783660
-Precision on class #1: 0,000000
-Precision on class #2: 0,885246
+Weighted Recall: 0,885246
+Recall on class #1: 0,000000
+Recall on class #2: 1,000000
 
 Testing for dataset data/dermatology-6.arff:
 
@@ -730,9 +732,9 @@ Confusion matrix:
 ----------------
 |1.0	|337.0	|
 ----------------
-Weighted Precision: 0,997340
-Precision on class #1: 0,952381
-Precision on class #2: 1,000000
+Weighted Recall: 0,997207
+Recall on class #1: 1,000000
+Recall on class #2: 0,997041
 
 
 J48
@@ -744,9 +746,9 @@ Confusion matrix:
 ----------------
 |1.0	|337.0	|
 ----------------
-Weighted Precision: 0,997340
-Precision on class #1: 0,952381
-Precision on class #2: 1,000000
+Weighted Recall: 0,997207
+Recall on class #1: 1,000000
+Recall on class #2: 0,997041
 
 Testing for dataset data/credit-g.arff:
 
@@ -760,9 +762,9 @@ Confusion matrix:
 ----------------
 |88.0	|612.0	|
 ----------------
-Weighted Precision: 0,702168
-Precision on class #1: 0,557789
-Precision on class #2: 0,764045
+Weighted Recall: 0,723000
+Recall on class #1: 0,370000
+Recall on class #2: 0,874286
 
 
 J48
@@ -774,9 +776,9 @@ Confusion matrix:
 ----------------
 |113.0	|587.0	|
 ----------------
-Weighted Precision: 0,687577
-Precision on class #1: 0,510823
-Precision on class #2: 0,763329
+Weighted Recall: 0,705000
+Recall on class #1: 0,393333
+Recall on class #2: 0,838571
 
 Testing for dataset data/satimage.arff:
 
@@ -790,9 +792,9 @@ Confusion matrix:
 ----------------
 |117.0	|3903.0	|
 ----------------
-Weighted Precision: 0,920034
-Precision on class #1: 0,637771
-Precision on class #2: 0,949173
+Weighted Recall: 0,926494
+Recall on class #1: 0,496386
+Recall on class #2: 0,970896
 
 
 J48
@@ -804,9 +806,9 @@ Confusion matrix:
 ----------------
 |175.0	|3845.0	|
 ----------------
-Weighted Precision: 0,912874
-Precision on class #1: 0,550129
-Precision on class #2: 0,950321
+Weighted Recall: 0,915220
+Recall on class #1: 0,515663
+Recall on class #2: 0,956468
 
 Testing for dataset data/ecoli.arff:
 
@@ -820,9 +822,9 @@ Confusion matrix:
 ----------------
 |8.0	|293.0	|
 ----------------
-Weighted Precision: 0,934164
-Precision on class #1: 0,733333
-Precision on class #2: 0,957516
+Weighted Recall: 0,937500
+Recall on class #1: 0,628571
+Recall on class #2: 0,973422
 
 
 J48
@@ -834,9 +836,9 @@ Confusion matrix:
 ----------------
 |9.0	|292.0	|
 ----------------
-Weighted Precision: 0,923902
-Precision on class #1: 0,689655
-Precision on class #2: 0,951140
+Weighted Recall: 0,928571
+Recall on class #1: 0,571429
+Recall on class #2: 0,970100
 
 Testing for dataset data/ionosphere.arff:
 
@@ -850,9 +852,9 @@ Confusion matrix:
 ----------------
 |8.0	|217.0	|
 ----------------
-Weighted Precision: 0,915352
-Precision on class #1: 0,928571
-Precision on class #2: 0,907950
+Weighted Recall: 0,914530
+Recall on class #1: 0,825397
+Recall on class #2: 0,964444
 
 
 J48
@@ -864,9 +866,9 @@ Confusion matrix:
 ----------------
 |8.0	|217.0	|
 ----------------
-Weighted Precision: 0,915352
-Precision on class #1: 0,928571
-Precision on class #2: 0,907950
+Weighted Recall: 0,914530
+Recall on class #1: 0,825397
+Recall on class #2: 0,964444
 
 Testing for dataset data/postoperative.arff:
 
@@ -880,9 +882,9 @@ Confusion matrix:
 ----------------
 |0.0	|66.0	|
 ----------------
-Weighted Precision: 0,537778
-Precision on class #1: 0,000000
-Precision on class #2: 0,733333
+Weighted Recall: 0,733333
+Recall on class #1: 0,000000
+Recall on class #2: 1,000000
 
 
 J48
@@ -894,9 +896,9 @@ Confusion matrix:
 ----------------
 |0.0	|66.0	|
 ----------------
-Weighted Precision: 0,537778
-Precision on class #1: 0,000000
-Precision on class #2: 0,733333
+Weighted Recall: 0,733333
+Recall on class #1: 0,000000
+Recall on class #2: 1,000000
 
 Testing for dataset data/abalone.arff:
 
@@ -910,9 +912,9 @@ Confusion matrix:
 ----------------
 |96.0	|3746.0	|
 ----------------
-Weighted Precision: 0,905582
-Precision on class #1: 0,505155
-Precision on class #2: 0,940497
+Weighted Recall: 0,920278
+Recall on class #1: 0,292537
+Recall on class #2: 0,975013
 
 
 J48
@@ -924,9 +926,9 @@ Confusion matrix:
 ----------------
 |79.0	|3763.0	|
 ----------------
-Weighted Precision: 0,904961
-Precision on class #1: 0,524096
-Precision on class #2: 0,938170
+Weighted Recall: 0,921714
+Recall on class #1: 0,259701
+Recall on class #2: 0,979438
 
 Testing for dataset data/kddcup-guess_passwd_vs_satan.arff:
 
@@ -940,9 +942,9 @@ Confusion matrix:
 ----------------
 |2.0	|1587.0	|
 ----------------
-Weighted Precision: 0,998195
-Precision on class #1: 0,962963
-Precision on class #2: 0,999370
+Weighted Recall: 0,998173
+Recall on class #1: 0,981132
+Recall on class #2: 0,998741
 
 
 J48
@@ -954,9 +956,9 @@ Confusion matrix:
 ----------------
 |2.0	|1587.0	|
 ----------------
-Weighted Precision: 0,998826
-Precision on class #1: 0,963636
-Precision on class #2: 1,000000
+Weighted Recall: 0,998782
+Recall on class #1: 1,000000
+Recall on class #2: 0,998741
 
 Testing for dataset data/breast-cancer.arff:
 
@@ -970,9 +972,9 @@ Confusion matrix:
 ----------------
 |12.0	|189.0	|
 ----------------
-Weighted Precision: 0,684670
-Precision on class #1: 0,571429
-Precision on class #2: 0,732558
+Weighted Recall: 0,716783
+Recall on class #1: 0,188235
+Recall on class #2: 0,940299
 
 
 J48
@@ -984,9 +986,9 @@ Confusion matrix:
 ----------------
 |8.0	|193.0	|
 ----------------
-Weighted Precision: 0,752426
-Precision on class #1: 0,741935
-Precision on class #2: 0,756863
+Weighted Recall: 0,755245
+Recall on class #1: 0,270588
+Recall on class #2: 0,960199
 
 Testing for dataset data/kddcup-land_vs_portsweep.arff:
 
@@ -1000,9 +1002,9 @@ Confusion matrix:
 ----------------
 |0.0	|1040.0	|
 ----------------
-Weighted Precision: 1,000000
-Precision on class #1: 1,000000
-Precision on class #2: 1,000000
+Weighted Recall: 1,000000
+Recall on class #1: 1,000000
+Recall on class #2: 1,000000
 
 
 J48
@@ -1014,9 +1016,9 @@ Confusion matrix:
 ----------------
 |0.0	|1040.0	|
 ----------------
-Weighted Precision: 1,000000
-Precision on class #1: 1,000000
-Precision on class #2: 1,000000
+Weighted Recall: 1,000000
+Recall on class #1: 1,000000
+Recall on class #2: 1,000000
 
 Process finished with exit code 0
 
